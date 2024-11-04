@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addToStoredAlreadyRead } from '../../utilities/addToDB';
 
 const BookDetail = () => {
     const { bookId } = useParams();
@@ -10,6 +11,18 @@ const BookDetail = () => {
     // console.log(findBook,bookId,id);
 
     const {bookName,author,image,category,review,tags,totalPages, publisher, yearOfPublishing, rating, bookId: currentBookId } = findBook;
+
+const handleAlreadyRead = (id) =>{
+//1. understand what to store or save: (bookId)
+//2. where to store: database
+//3. array, list, collection:
+//4. checked if the book already read
+//5. if not, add the book to the list
+//6. if yes, do not add the same book again
+
+addToStoredAlreadyRead(id)
+
+;}
 
     return (
         <div>
@@ -41,7 +54,7 @@ const BookDetail = () => {
                         <p className='grid grid-cols-4 pb-2'><span className=''>Publisher:</span> {publisher}</p>
                         <p className='grid grid-cols-4'><span>Year of Publishing:</span> {yearOfPublishing}</p>
                         <p className='grid grid-cols-4 py-2 pb-5'><span>Rating:</span> {rating}</p>
-                        <button className="btn btn-primary">Read</button>
+                        <button onClick={()=> handleAlreadyRead(bookId)} className="btn btn-primary">Already read</button>
                         <button className="btn btn-primary ml-5">Wishlist</button>
                     </div>
                 </div>
