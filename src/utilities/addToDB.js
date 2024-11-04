@@ -1,8 +1,8 @@
 
 
-//local-storage
+//local-storage for already-read button
 const getStoredAlreadyReadBooks = () => {
-    
+
     //already read books list
     const storedAlreadyReadListStr = localStorage.getItem("already-read-list");
     if (storedAlreadyReadListStr) {
@@ -15,7 +15,7 @@ const getStoredAlreadyReadBooks = () => {
 
 const addToStoredAlreadyRead = (id) => {
     const storedAlreadyReadList = getStoredAlreadyReadBooks();
-    if (storedAlreadyReadList.includes(id)) {
+    if (storedAlreadyReadList.includes(id)) { 
         //already exists, do not add
         //add alert
         console.log(id, "already exist in the read list")
@@ -26,4 +26,15 @@ const addToStoredAlreadyRead = (id) => {
     }
 }
 
-export {addToStoredAlreadyRead}
+
+
+
+//local-storage for Wishlist button
+const getStoredWishList = ()=>{
+
+}
+
+const addToStoredWishListBooks =()=>{
+const storedWishListBooks = getStoredWishList();
+}
+export {addToStoredAlreadyRead, addToStoredWishListBooks, getStoredAlreadyReadBooks}

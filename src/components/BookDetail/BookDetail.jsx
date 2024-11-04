@@ -20,9 +20,12 @@ const handleAlreadyRead = (id) =>{
 //5. if not, add the book to the list
 //6. if yes, do not add the same book again
 
-addToStoredAlreadyRead(id)
+addToStoredAlreadyRead(id);
+}
 
-;}
+const handleWishList = () =>{
+
+}
 
     return (
         <div>
@@ -55,7 +58,7 @@ addToStoredAlreadyRead(id)
                         <p className='grid grid-cols-4'><span>Year of Publishing:</span> {yearOfPublishing}</p>
                         <p className='grid grid-cols-4 py-2 pb-5'><span>Rating:</span> {rating}</p>
                         <button onClick={()=> handleAlreadyRead(bookId)} className="btn btn-primary">Already read</button>
-                        <button className="btn btn-primary ml-5">Wishlist</button>
+                        <button onClick={()=> handleWishList()} className="btn btn-primary ml-5">Wishlist</button>
                     </div>
                 </div>
             </div>
